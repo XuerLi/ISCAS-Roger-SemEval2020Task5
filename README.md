@@ -25,7 +25,7 @@ pip install -r requirements.txt
 ## Pre-processing
 
 First, prepare data.
-Donwload SemEval 2020 Task data from [GitHub]([https://competitions.codalab.org/competitions/21691](https://github.com/arielsho/SemEval-2020-Task-5)) and put it at ``data/zip_data`` :
+Donwload SemEval 2020 Task data from [GitHub](https://github.com/arielsho/SemEval-2020-Task-5) and put it at ``data/zip_data`` :
 
 ```shell
 data
