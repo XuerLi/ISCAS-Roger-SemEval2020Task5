@@ -9,14 +9,14 @@ mkdir -p ${TRAIN_DATA_FOLDER}/subtask1
 mkdir -p ${TRAIN_DATA_FOLDER}/subtask2
 mkdir -p ${ZIP_FOLDER}
 
-wget -P ${ZIP_FOLDER} https://zenodo.org/record/3932442/files/SemEval-2020-Task5-Dataset.zip
+wget -P ${ZIP_FOLDER} https://zenodo.org/record/3932442/files/SemEval-2020-Task-5-master.zip
 
-unzip -d ${ZIP_FOLDER} ${ZIP_FOLDER}/SemEval-2020-Task5-Dataset.zip
+unzip -d ${ZIP_FOLDER} ${ZIP_FOLDER}/SemEval-2020-Task-5-master.zip
 
 echo "Convert subtask1 data from csv to jsonl"
 
 python data_scripts/format_converter.py \
-  -src ${ZIP_FOLDER}/SemEval-2020-Task5-Dataset/Subtask-1/subtask1_train.csv \
+  -src ${ZIP_FOLDER}/SemEval-2020-Task-5-master/Subtask-1/subtask1_train.csv \
   -tgt ${TRAIN_DATA_FOLDER}/subtask1/train.jsonl \
   -key-map "{'gold_label':'label','sentence':'text'}"
 
@@ -30,7 +30,7 @@ python data_scripts/generate_subtask1_data.py \
 echo "Split subtask2 data"
 
 python data_scripts/generate_subtask2_data.py \
-  -data ${ZIP_FOLDER}/SemEval-2020-Task5-Dataset/Subtask-2/subtask2_train.csv \
+  -data ${ZIP_FOLDER}/SemEval-2020-Task-5-master/Subtask-2/subtask2_train.csv \
   -split data/split_filelist/subtask2 \
   -output ${TRAIN_DATA_FOLDER}/subtask2
 
@@ -54,13 +54,13 @@ mkdir -p ${EVAL_DATA_FOLDER}/subtask1
 mkdir -p ${EVAL_DATA_FOLDER}/subtask2
 
 python data_scripts/format_converter.py \
-  -src ${ZIP_FOLDER}/SemEval-2020-Task5-Dataset/Subtask-1/subtask1_test.csv \
+  -src ${ZIP_FOLDER}/SemEval-2020-Task-5-master/Subtask-1/subtask1_test.csv \
   -tgt ${EVAL_DATA_FOLDER}/subtask1/subtask1_test.jsonl \
   -key-map "{'gold_label':'label','sentence':'text'}"
 
 for query_type in "name" "def"; do
   python data_scripts/task2_csv_to_squad_data.py \
-    -data ${ZIP_FOLDER}/SemEval-2020-Task5-Dataset/Subtask-2/subtask2_test.csv \
+    -data ${ZIP_FOLDER}/SemEval-2020-Task-5-master/Subtask-2/subtask2_test.csv \
     -query ${query_type} \
     -output ${EVAL_DATA_FOLDER}/subtask2/test.squad.${query_type}.json
 done
