@@ -1,4 +1,4 @@
-# ISCAS-SemEval2020Task5
+# ISCAS-SemEval2020Task5 This repository is forked from casnlu/ISCAS-SemEval2020Task5
 
 - Code for [``ISCAS at SemEval-2020 Task 5: Pre-trained Transformers for Counterfactual Statement Modeling``](https://luyaojie.github.io/pdf/lusemeval2020.pdf)
 - Please contact [Yaojie Lu](http://luyaojie.github.io) ([@luyaojie](mailto:yaojie.lu@outlook.com)) for questions and suggestions.
@@ -25,7 +25,7 @@ pip install -r requirements.txt
 ## Pre-processing
 
 First, prepare data.
-Donwload SemEval 2020 Task data from [CodaLab](https://competitions.codalab.org/competitions/21691) and put it at ``data/zip_data`` :
+Donwload SemEval 2020 Task data from [GitHub]([https://competitions.codalab.org/competitions/21691](https://github.com/arielsho/SemEval-2020-Task-5)) and put it at ``data/zip_data`` :
 
 ```shell
 data
