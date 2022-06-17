@@ -28,9 +28,10 @@ First, prepare data.
 Donwload SemEval 2020 Task data from [CodaLab](https://competitions.codalab.org/competitions/21691) and put it at ``data/zip_data`` :
 
 ```shell
-data/zip_data
-├── split_filelist   
-├── SemEval-2020-Task-5-master.zip
+data
+├── split_filelist 
+├── zip_data
+      ├── SemEval-2020-Task-5-master.zip
 ```
 
 Second, preprocess datasets and save train sets at ``$PWD/data/train_data/`` and online evaluation sets at ``$PWD/data/eval_data/``.
