@@ -29,16 +29,14 @@ Donwload SemEval 2020 Task data from [CodaLab](https://competitions.codalab.org/
 
 ```shell
 data/zip_data
-├── Subtask-1-master.zip
-├── Subtask-1-test-master.zip
-├── Subtask-2-master.zip
-└── Subtask-2-test-master.zip
+├── split_filelist   
+├── SemEval-2020-Task-5-master.zip
 ```
 
 Second, preprocess datasets and save train sets at ``$PWD/data/train_data/`` and online evaluation sets at ``$PWD/data/eval_data/``.
 
 ```shell
-bash data_preprocessing.bash
+bash data_preprocessing_zenodo.bash
 ```
 
 ## Subtask 1
