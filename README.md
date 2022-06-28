@@ -10,6 +10,11 @@ General
 - Python (verified on 3.7.)
 - unzip (for running data_preprocessing.sh only)
 
+Install Python and overrides as below if you use colab
+
+!apt-get install python3.7
+!pip install overrides==3.1.0
+
 Python Packages
 
 - allennlp==0.9.0
