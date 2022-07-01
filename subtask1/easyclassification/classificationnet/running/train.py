@@ -19,8 +19,7 @@ def main():
     args = parser.parse_args()
 
     env_utils.prepare_env(args)
-    env_utils.prepare_model_path(model_path=args.model_path,
-                                 overwrite_model_path=args.overwrite_model_path)
+    env_utils.prepare_model_path(model_path=args.model_path)
 
     train_env_map[args.model_name].train_model(args)
 
