@@ -292,8 +292,7 @@ def prepare_model_path(model_path="model/debug_model"):
         print('Model Path: %s is existed, overwrite it.' % model_path)
         import shutil
         shutil.rmtree(model_path)
-    else:
-        os.makedirs(model_path, exist_ok=True)
+    os.makedirs(model_path, exist_ok=True)
 
     pre_logger(os.path.join(model_path, "running.log"))
 
