@@ -287,7 +287,19 @@ def prepare_optimizer(args, model: Model):
     logging.info(optimizer)
     return optimizer
 
+def prepare_model_path(model_path="model/debug_model"):
+    if os.path.exists(model_path):
+        print('Model Path: %s is existed, overwrite it.' % model_path)
+        import shutil
+        shutil.rmtree(model_path)
+    else:
+        os.makedirs(model_path, exist_ok=True)
 
+    pre_logger(os.path.join(model_path, "running.log"))
+
+    return model_path
+
+"""
 def prepare_model_path(model_path="model/debug_model", overwrite_model_path=False):
     if os.path.exists(model_path) and not overwrite_model_path:
         print('Model Path: %s is existed, overwrite (y/n)?' % model_path)
@@ -302,7 +314,7 @@ def prepare_model_path(model_path="model/debug_model", overwrite_model_path=Fals
     pre_logger(os.path.join(model_path, "running.log"))
 
     return model_path
-
+"""
 
 def prepare_dataset(dataset_reader, data_folder_path, suffix='.jsonl'):
     train_dataset = dataset_reader.read(os.path.join(data_folder_path, 'train{}'.format(suffix)))
