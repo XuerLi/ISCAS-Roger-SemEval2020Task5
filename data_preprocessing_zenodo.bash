@@ -9,7 +9,7 @@ mkdir -p ${TRAIN_DATA_FOLDER}/subtask1
 mkdir -p ${TRAIN_DATA_FOLDER}/subtask2
 mkdir -p ${ZIP_FOLDER}
 
-wget -P ${ZIP_FOLDER} https://zenodo.org/record/3932442/files/SemEval-2020-Task-5-master.zip
+#wget -P ${ZIP_FOLDER} https://zenodo.org/record/3932442/files/SemEval-2020-Task-5-master.zip
 
 unzip -d ${ZIP_FOLDER} ${ZIP_FOLDER}/SemEval-2020-Task-5-master.zip
 
