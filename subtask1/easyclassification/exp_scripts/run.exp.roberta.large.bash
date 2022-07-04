@@ -14,5 +14,6 @@ do
       -data ${DATA_FOLDER}/cv${cv_index} \
       -transformer ${TRANSFORMER} \
       -model-path model/subtask1_${TRANSFORMER}_cv${cv_index}_bert_${lr}
+      -batch 16
   done
 done
