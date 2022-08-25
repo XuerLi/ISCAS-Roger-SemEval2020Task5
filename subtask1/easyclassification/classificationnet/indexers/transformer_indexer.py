@@ -52,17 +52,17 @@ class TransformerIndexer(TokenIndexer[int]):
                  ) -> None:
         super().__init__(token_min_padding_length)
         if model_name.endswith("-cased") and do_lowercase:
-            logger.warning("Your pretrained model appears to be cased, "
+            print("Your pretrained model appears to be cased, "
                            "but your indexers is lowercasing tokens.")
         elif model_name.endswith("-uncased") and not do_lowercase:
-            logger.warning("Your pretrained model appears to be uncased, "
+            print("Your pretrained model appears to be uncased, "
                            "but your indexers is not lowercasing tokens.")
         self._model_name = model_name
         self.tokenizer = AutoTokenizer.from_pretrained(model_name, do_lower_case=do_lowercase)
         self._namespace = namespace
         self._added_to_vocabulary = False
         self._padding_value = self.tokenizer.convert_tokens_to_ids([self.tokenizer.pad_token])[0]
-        logger.info(f"Using token indexers padding value of {self._padding_value}")
+        print(f"Using token indexers padding value of {self._padding_value}")
 
         self._never_lowercase = never_lowercase or []
         self._use_starting_offsets = use_starting_offsets

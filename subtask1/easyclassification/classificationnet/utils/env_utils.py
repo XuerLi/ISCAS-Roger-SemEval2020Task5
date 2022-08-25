@@ -298,22 +298,6 @@ def prepare_model_path(model_path="model/debug_model"):
 
     return model_path
 
-"""
-def prepare_model_path(model_path="model/debug_model", overwrite_model_path=False):
-    if os.path.exists(model_path) and not overwrite_model_path:
-        print('Model Path: %s is existed, overwrite (y/n)?' % model_path)
-        answer = input()
-        if answer.strip().lower() == 'y':
-            import shutil
-            shutil.rmtree(model_path)
-        else:
-            exit(1)
-    os.makedirs(model_path, exist_ok=True)
-
-    pre_logger(os.path.join(model_path, "running.log"))
-
-    return model_path
-"""
 
 def prepare_dataset(dataset_reader, data_folder_path, suffix='.jsonl'):
     train_dataset = dataset_reader.read(os.path.join(data_folder_path, 'train{}'.format(suffix)))

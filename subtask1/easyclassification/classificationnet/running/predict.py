@@ -15,7 +15,7 @@ def main():
     env_utils.add_inference_argument(parser)
     parser.add_argument('-data', dest='data', type=str)
     parser.add_argument('-output', dest='output', type=str)
-    parser.add_argument('-batch', dest='batch_size', type=int, default=256)
+    parser.add_argument('-batch', dest='batch_size', type=int, default=8)
     args = parser.parse_args()
 
     predictor = load_predictor(model_path=args.model, device=args.device)

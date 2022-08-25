@@ -17,7 +17,7 @@ def main():
         value.add_arguments(sub_parser)
 
     args = parser.parse_args()
-
+    print('********args is '+ str(args))
     env_utils.prepare_env(args)
     env_utils.prepare_model_path(model_path=args.model_path)
 
